@@ -67,7 +67,7 @@ const slider = document.getElementById('slider');
   const form = document.querySelector('.sm\\:w-2\\/3'); // Select the form container
   const inputs = form.querySelectorAll('input[type="text"]');
   const checkbox = form.querySelector('input[type="checkbox"]');
-  const submitButton = form.querySelector('a[href="home.html"]');
+  const submitButton = form.querySelector('a[href="index.html"]');
   
   // Create the loader element
   const loader = document.createElement('div');
