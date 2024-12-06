@@ -1,56 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-//   function pageTransition() {
-//       let tl = gsap.timeline();
-//       tl.to(".transition", {
-//           duration: 1,
-//           scaleY: 1,
-//           transformOrigin: "bottom",
-//           ease: "power4.inOut",
-//       });
-//       tl.to(".transition", {
-//           duration: 1,
-//           scaleY: 0,
-//           transformOrigin: "top",
-//           ease: "power4.inOut", // Fixed typo here
-//           delay: 0.2,
-//       });
-//   }
-
-//   function contentAnimation() {
-//       let tl = gsap.timeline();
-//       tl.to(".h1", {
-//           top: 0, // Adjusted top value to be more realistic
-//           duration: 1,
-//           ease: "power3.inOut",
-//           delay: 0.75,
-//       });
-//   }
-
-//   function delay(n = 0) { // Used default parameter directly
-//       return new Promise(resolve => setTimeout(resolve, n));
-//   }
-
-//   barba.init({
-//       sync: true,
-//       transitions: [{
-//           async leave(data) {
-//               const done = this.async();
-//               pageTransition();
-//               await delay(1000); // Make sure the delay matches the animation duration
-//               done();
-//           },
-
-//           async enter(data) {
-//               contentAnimation();
-//           },
-
-//           async once(data) {
-//               contentAnimation();
-//           }
-//       }]
-//   });
-
 const hamBurger = document.getElementById('hamburger');
 const hamBurgerMenu = document.getElementById('hamburger-menu');
 const closeMenu = document.getElementById('close-menu');
@@ -115,6 +64,114 @@ const slider = document.getElementById('slider');
  
 
 
+  const form = document.querySelector('.sm\\:w-2\\/3'); // Select the form container
+  const inputs = form.querySelectorAll('input[type="text"]');
+  const checkbox = form.querySelector('input[type="checkbox"]');
+  const submitButton = form.querySelector('a[href="home.html"]');
+  
+  // Create the loader element
+  const loader = document.createElement('div');
+  loader.classList.add(
+    'loader',
+    'hidden',
+    'absolute',
+    'top-0',
+    'left-0',
+    'w-full',
+    'h-full',
+    'flex',
+    'justify-center',
+    'items-center',
+    'bg-gray-800',
+    'bg-opacity-50'
+  );
+  loader.innerHTML = `<div class="animate-spin rounded-full h-16 w-16 border-t-4 border-base-color"></div>`;
+  document.body.appendChild(loader);
+
+  function validateInput(input) {
+    const value = input.value.trim();
+    const errorElement = input.nextElementSibling;
+    
+    if (!value) {
+      showError(input, 'This field is required.');
+      return false;
+    }
+
+    if (input.type === 'email' && !isValidEmail(value)) {
+      showError(input, 'Please enter a valid email address.');
+      return false;
+    }
+
+    clearError(input);
+    return true;
+  }
+
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  function showError(input, message) {
+    input.classList.add('border-red-500');
+    let errorElement = input.parentElement.querySelector('.error-message');
+    if (!errorElement) {
+      errorElement = document.createElement('span');
+      errorElement.classList.add('error-message', 'text-red-500', 'text-sm');
+      input.parentElement.appendChild(errorElement);
+    }
+    errorElement.textContent = message;
+  }
+
+  function clearError(input) {
+    input.classList.remove('border-red-500');
+    const errorElement = input.parentElement.querySelector('.error-message');
+    if (errorElement) {
+      errorElement.remove();
+    }
+  }
+
+  function validateForm() {
+    let isValid = true;
+    inputs.forEach((input) => {
+      if (!validateInput(input)) {
+        isValid = false;
+      }
+    });
+
+    if (!checkbox.checked) {
+      alert('You must agree to the Terms of Use and Privacy Policy.');
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  function showLoader() {
+    loader.classList.remove('hidden');
+  }
+
+  function hideLoader() {
+    loader.classList.add('hidden');
+  }
+
+  submitButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default navigation
+    if (validateForm()) {
+      showLoader();
+      setTimeout(() => {
+        hideLoader();
+        alert('successfully submitted you will get a response from us!');
+        setTimeout(() => {
+          window.location.href = submitButton.href; // Navigate to the target URL after showing success
+        }, 500); // Allow time for the loader to disappear
+      }, 2000); // Simulate a 2-second submission process
+    }
+
+    
+  });
+
+
+ 
   
 
  

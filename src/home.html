@@ -8,7 +8,7 @@
 </head>
     <!-- npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
     
-        <body data-barba="wrapper">
+        <body class="">
             <div class=" relative " > <!-- container-->
                 <div class="w-full h-full ">
                     <header class="fixed w-screen flex items-center z-50 justify-center">
@@ -38,8 +38,28 @@
                             </div>
                             
                         </nav>
+
+
+
+                        
                     </header>
             
+
+                    <div class="flex relative justify-center pt-7 "> 
+                        <svg
+                          class="w-16 h-16 animate-spin z-50 left-8 absolute"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="13 13 29 26"
+                          stroke-width="1"
+                          stroke="currentColor"
+                        >
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 1.5a10.5 10.5 0 110 21 10.5 10.5 0 010-21zm0 0V12m0 0h9M3.75 8.25h16.5M3.75 15.75h16.5" />
+                        </svg>
+                      </div>
+
+
+
                     <div class=" w-screen hidden h-screen fixed top-0 z-50  flex-col bg-bg-color  rounded-bl-3xl   rounded-tr-3xl origin-top-left animate-open-menu" id="hamburger-menu">
                        <div class=" bg-gray-900 w-11/12 ml-3 mt-3 rounded-bl-3xl px-3  rounded-tr-3xl">
                         <div class="flex items-center justify-between px-6 mt-3">
@@ -69,6 +89,16 @@
                 </div>
 
           
+
+
+
+
+              
+
+
+
+
+
                     
                   
                     <div  class="h-h-one sm:h-h-three w-full bg-cover bg-center bg-no-repeat  text-gray-950 flex flex-col justify-center items-center"  style=" background-image:linear-gradient(to bottom,rgba(255, 255, 255, 0.534),rgb(255, 255, 255)),url(imgs/shutterstock_186964970-scaled.jpg);">
@@ -83,6 +113,9 @@
         
                                 
                             </div>
+
+
+                           
                         </div>
                 
                     
@@ -97,20 +130,20 @@
                             </h1>
                         </div>
                         
-                        <div class="flex sm:w-1/4  w-4/5 h-14   md:h-24 bg-base-color items-center rounded-md text-white shadow-lg shadow-gray-950">
-                            <div class="w-1/2">
-                            <img src="" alt="">
+                        <div class="flex sm:w-1/4 w-4/5 h-14  md:h-20 bg-base-color  items-center rounded-md text-white shadow-lg shadow-gray-950">
+                            <div class="w-1/2 flex items-center justify-center">
+                            <img src="/sarrel-visa-express/src/imgs/globe.png" alt="" class="size-8 sm:size-10 ">
                             </div>
-                            <h1>
+                            <h1 class="w-1/2">
                                 Visa
                             </h1>
                         </div>
                         
-                        <div class="flex sm:w-1/4  w-4/5 h-14   md:h-20 bg-base-color items-center rounded-md text-white shadow-lg shadow-gray-950">
-                            <div class="w-1/2">
-                            <img src="" alt="">
+                        <div class="flex sm:w-1/4 w-4/5 h-14  md:h-20 bg-base-color  items-center rounded-md text-white shadow-lg shadow-gray-950">
+                            <div class="w-1/2 flex items-center justify-center">
+                            <img src="/sarrel-visa-express/src/imgs/green.png" alt="" class="size-8 sm:size-10 ">
                             </div>
-                            <h1>
+                            <h1 class="w-1/2">
                                 Green Card
                             </h1>
                         </div>
@@ -214,7 +247,7 @@
                  <div class="flex flex-col sm:flex-row h-auto py-12 w-11/12 sm:ml-11 ml-4 bg-gray-900 items-center rounded-tr-3xl rounded-bl-3xl sm:rounded-tr-3xl  mb-12 ">
                     <div class="w-1/2 flex justify-center items-center sm:justify-end">
                         <div class="sm:size-56 size-36  bg-white rounded-full">
-                            <img src="" alt="">
+                            <img src="/sarrel-visa-express/src/imgs/adventure.png" alt="adventure">
                         </div>
                     </div>
                     <div class="w-1/2 text-white text-center mt-5 ">
@@ -226,45 +259,52 @@
                             in the U.S make sure you've been pre-approved <br>
                             by the American authorities
                         </h2>
-                        <button href="getstarted.html" class="sm:px-24 sm:py-3 px-11 py-1 bg-base-color font-semibold tracking-wider rounded-md"> Get started</button>
+                        <div>
+                            <a href="getstarted.html" class="sm:px-24 sm:py-3 px-3 py-4 text-white bg-base-color  sm:text-xl font-semibold tracking-wider rounded-md"> Get started</a>
+ 
+                        </div>
                     </div>
                  </div>
                  <div class="flex flex-col flex-wrap-reverse  sm:flex-row h-auto py-12 w-11/12 sm:ml-11 ml-4 bg-gray-900 items-center rounded-tr-3xl rounded-bl-3xl sm:rounded-tr-3xl  mb-12 ">
                     <div class="w-1/2 flex justify-center items-center sm:justify-end ">
                         <div class="sm:size-56 size-36  bg-white rounded-full">
-                            <img src="" alt="">
+                            <img src="/sarrel-visa-express/src/imgs/business.png" alt="business">
                         </div>
                     </div>
                     <div class="w-1/2 text-white text-center mt-5 ">
                         <h1 class="text-sm sm:text-xl md:text-2xl font-bold mb-7">
-                            Going on an adventure ?`
+                            Getting down to business?
                         </h1>
                         <h2 class="text-xs sm:text-sm md:text-sm lg:text-xl font-semibold mb-7">
-                            prepare for short-term visit (or just an overlay) <br>
-                            in the U.S make sure you've been pre-approved <br>
-                            by the American authorities
+                            Get your travel permit in order to conduct temporary <br>
+                            business on U.S. territory or to attend a business<br>
+                            meeting or conference.
                         </h2>
-                        <button href="getstarted.html" class="sm:px-24 sm:py-3 px-11 py-1 bg-base-color font-semibold tracking-wider rounded-md"> Get started</button>
+                        <div>
+                                <a href="getstarted.html" class="sm:px-24 sm:py-3 px-3 py-4 text-white bg-base-color  sm:text-xl font-semibold tracking-wider rounded-md"> Get started</a>
+                            </div>
                     </div>
                  </div>
                  <div class="flex flex-col sm:flex-row h-auto py-12 w-11/12 sm:ml-11 ml-4 bg-gray-900 items-center rounded-tr-3xl rounded-bl-3xl sm:rounded-tr-3xl  mb-12 ">
                     <div class="w-1/2 flex justify-center items-center sm:justify-end">
                         <div class=" sm:size-56 size-36  bg-white rounded-full">
-                            <img src="" alt="">
+                            <img src="/sarrel-visa-express/src/imgs/dream.png" alt="">
                         </div>
                     </div>
                     <div class="w-1/2 text-white text-center mt-5 ">
                         <h1 class="text-sm sm:text-xl md:text-2xl font-bold mb-7">
-                            Going on an adventure ?
+                            American Dreams?
                         </h1>
                         <h2 class="text-xs sm:text-sm md:text-sm lg:text-xl font-semibold mb-7">
-                            prepare for short-term visit (or just an overlay) <br>
-                            in the U.S make sure you've been pre-approved <br>
-                            by the American authorities
+                            Learn how to start over in the United States, whether <br>
+                            you are travelling to reunite with family or relocating <br>
+                            with a significant other.
                         </h2>
                         
-                            <button href="getstarted.html" class="sm:px-24 sm:py-3 px-11  py-1   bg-base-color font-semibold tracking-wider rounded-md"> Get started</button>
-                       
+                        <div>
+                            <a href="getstarted.html" class="sm:px-24 sm:py-3 px-3 py-4 text-white bg-base-color  sm:text-xl font-semibold tracking-wider rounded-md"> Get started</a>
+    
+                        </div>
                     </div>
                  </div>
         
@@ -277,8 +317,8 @@
 
         
         
-                 <section id="service">
-                    <div class="w-full flex flex-col justify-center bg-white px-8">
+                 <section id="service" class="pt-28">
+                    <div class="w-full flexflex-col justify-center bg-white px-8">
                         <div class="flex flex-col justify-center items-center md:mb-10">
                             <section class="bg-white ">
                                 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -290,7 +330,7 @@
                                         <div>
                                             <div class="min-h-full flex flex-col p-6 mx-auto md:w-[300px] text-center text-white bg-gray-900 bg-primary rounded-[10px] border border-gray-100 shadow  xl:p-8 ">
                                                 <div class="flex justify-center items-center mb-2">
-                                                    <img alt="visa" src="">
+                                                    <img alt="visa" src="/sarrel-visa-express/src/imgs/ESTA_tick_circle.png">
                                                 </div>
                                                 <h3 class="mb-4 text-[24px] md:text-[40px] font-[400] text-white uppercase">Esta</h3>
                                                 <div class="flex justify-center items-baseline">
@@ -312,7 +352,7 @@
                                                     </div>
                                                 
                                             <div class="flex justify-center items-center mb-2">
-                                                    <img alt="visa" src="">
+                                                    <img alt="" src="/sarrel-visa-express/src/imgs/green.png">
                                                 </div>
                                                 <h3 class="mb-4 text-[24px] md:text-[40px] font-[400] text-white uppercase">U.S. <span class="capitalize">Visa</span></h3>
                                                 <div class="flex justify-center items-baseline">
@@ -331,7 +371,7 @@
                                         <div>
                                             <div class="min-h-full flex flex-col p-6 mx-auto md:w-[300px] text-center text-white bg-primary rounded-[10px] border border-gray-100 shadow dark:border-gray-600 xl:p-8 bg-gray-900">
                                                 <div class="flex justify-center items-center mb-2">
-                                                   <img src="" alt="">
+                                                   <img src="/sarrel-visa-express/src/imgs/globe.png" alt="visa">
                                                 </div>
                                                 <h3 class="mb-4 mt-2 text-[24px] md:text-[40px] font-[400] text-white capitalize">Green Card</h3>
                                                 <div class="mt-2 flex justify-center items-baseline">
@@ -354,7 +394,7 @@
         
         
                  <section id="aboutus">
-                    <div class=" flex flex-col justify-center items-center mt-28  bg-slate-100">
+                    <div class=" flex flex-col justify-center items-center pt-28 bg-slate-100">
                         <div class="w-3/4 mt-14 flex flex-col justify-center items-center ">
                             <h1 class="md:text-4xl text-gray-950 font-bold mb-14 sm:text-xl text-center">
                                 Streamlined online travel permits. <br> Managed by a U.S. law firm.
@@ -424,24 +464,24 @@
         
 
                
-                 <section id="testimonials1" class="flex items-center  flex-col bg-gray-200 justify-center">
+                 <section id="testimonials1" class="flex items-center  pt-28 flex-col bg-gray-200 justify-center">
                     <div class="w-full overflow-hidden h-auto">
                         <div id="slider" class="flex transition-transform duration-1000">
                           <div class="w-full flex-shrink-0 h-auto  flex items-center  justify-center ">
                             <div class=" w-full flex items-center justify-center">
                                 <div class="flex flex-col w-11/12  items-center overflow-hidden  gap-2 mt-10 ">
                                    <div class="h-1/2 py-5 flex items-center justify-center w-full shadow-md shadow-gray-500 bg-gray-900 rounded-bl-3xl  rounded-tr-3xl  ">
-                                    <div class="size-28 sm:size-40  bg-gray-100 rounded-full flex border-2 border-base-color justify-center sm:ml-5 items-center">
-                                        <img src="" alt="">
+                                    <div class="size-28 sm:size-40  overflow-hidden bg-gray-100 rounded-full flex border-2 border-base-color justify-center sm:ml-5 items-center">
+                                        <img src="/sarrel-visa-express/src/imgs/pexels-olly-834863.jpg" alt="" class="w-full h-full object-cover">
                                     </div>
                                    </div>
                                    <div class=" bg-white py-4 sm:h-auto flex justify-center sm:text-center items-center mb-2 flex-col gap-1 sm:gap-5 rounded-bl-3xl   rounded-tr-3xl shadow-gray-500 shadow-md ">
                                     <div class="w-3/4 pl-4 text-gray-900 ">
                                         <h1 class="text-gray-950 font-bold mb-2">
-                                            Rayim Buraka
+                                            — Joe Higginbotham
                                         </h1>
                                         <h2 class="text-semibold text-xs sm:text-sm md:text-sm mb-5">
-                                            1 Our goal is to provide you with the ultimate customer experience. In a world where legal services are limited, we assign to each application a case manager who will answer all your questions in great detail.
+                                            “Visa Simple has been a fantastic help in securing me and my family's visas into the UK. Sumit persevered through numerous delays from our side and never lost sight of the end goal. In the end, the submissions of visa application and entrance into the UK was flawless and went just as was described by Sumit. I would recommend Visa Simple to anyone needing a visa into the UK from any visa track. Sumit has shown a thorough knowledge of the visa system.” 
                                         </h2>
                                     </div>
                                     <div class="flex gap-1">
@@ -459,17 +499,17 @@
                             <div class=" w-full flex items-center justify-center">
                                 <div class="flex flex-col w-11/12  items-center    gap-2 mt-10 ">
                                    <div class="h-1/2 py-5 flex items-center justify-center w-full shadow-md shadow-gray-500 bg-gray-900 rounded-bl-3xl  rounded-tr-3xl overflow-hidden ">
-                                    <div class="size-28 sm:size-40  bg-gray-100 rounded-full flex border-2 border-base-color justify-center sm:ml-5 items-center">
-                                        <img src="" alt="">
+                                    <div class="size-28 sm:size-40 overflow-hidden bg-gray-100 rounded-full flex border-2 border-base-color justify-center sm:ml-5 items-center">
+                                        <img src="/sarrel-visa-express/src/imgs/pexels-olly-3769021.jpg" alt="" class="w-full h-full object-cover">
                                     </div>
                                    </div>
                                    <div class=" bg-white py-4 sm:h-auto flex justify-center mb-2 sm:text-center items-center flex-col gap-1 sm:gap-5 rounded-bl-3xl overflow-hidden  rounded-tr-3xl shadow-gray-500 shadow-md ">
                                     <div class="w-3/4 pl-4 text-gray-900 ">
                                         <h1 class="text-gray-950 font-bold mb-2">
-                                            Rayim Buraka
+                                            — Hillary Evans
                                         </h1>
                                         <h2 class="text-semibold text-xs sm:text-sm md:text-sm mb-5">
-                                            1 Our goal is to provide you with the ultimate customer experience. In a world where legal services are limited, we assign to each application a case manager who will answer all your questions in great detail.
+                                            "Sumit helped me to successfully secure both my previous Tier 1 extension and most recently, my ILR (March 2014). He was very thorough and professional in his preparation of my case and put my mind at ease in all matters, despite my many questions. He went above and beyond to ensure that my application was smooth and that all aspects were seamlessly handled. I would highly recommend him for any US immigration matters."  
                                         </h2>
                                     </div>
                                     <div class="flex gap-1">
@@ -487,17 +527,17 @@
                             <div class=" w-full flex items-center justify-center">
                                 <div class="flex flex-col w-11/12  items-center    gap-2 mt-10 ">
                                    <div class="h-1/2 py-5 flex items-center justify-center w-full shadow-md shadow-gray-500 bg-gray-900 rounded-bl-3xl  rounded-tr-3xl overflow-hidden ">
-                                    <div class="size-28 sm:size-40  bg-gray-100 rounded-full flex border-2 border-base-color justify-center sm:ml-5 items-center">
-                                        <img src="" alt="">
+                                    <div class="size-28 sm:size-40 overflow-hidden bg-gray-100 rounded-full flex border-2 border-base-color justify-center sm:ml-5 items-center">
+                                        <img src="/sarrel-visa-express/src/imgs/pexels-kampus-5920774.jpg" alt="" class="w-full h-full object-cover ">
                                     </div>
                                    </div>
                                    <div class=" bg-white py-4 sm:h-auto flex justify-center mb-2 sm:text-center items-center flex-col gap-1 sm:gap-5 rounded-bl-3xl overflow-hidden  rounded-tr-3xl shadow-gray-500 shadow-md ">
                                     <div class="w-3/4 pl-4 text-gray-900 ">
                                         <h1 class="text-gray-950 font-bold mb-2">
-                                            Rayim Buraka
+                                            — Jaspaul Khurana
                                         </h1>
                                         <h2 class="text-semibold text-xs sm:text-sm md:text-sm mb-5">
-                                            1 Our goal is to provide you with the ultimate customer experience. In a world where legal services are limited, we assign to each application a case manager who will answer all your questions in great detail.
+                                            "I would highly recommend Visa Right to anyone for immigration related matters in the US. The benefit I drew from their service was their ability to provide clear and concise information for furnishing the right kind of documentation. Also a word of praise for Sumit as he took my case personally and advised me on many occasions in the past."   
                                         </h2>
                                     </div>
                                     <div class="flex gap-1">
@@ -515,17 +555,17 @@
                             <div class=" w-full flex items-center justify-center">
                                 <div class="flex flex-col w-11/12  items-center    gap-2 mt-10 ">
                                    <div class="h-1/2 py-5 flex items-center justify-center w-full shadow-md shadow-gray-500 bg-gray-900 rounded-bl-3xl  rounded-tr-3xl overflow-hidden ">
-                                    <div class="size-28 sm:size-40  bg-gray-100 rounded-full flex border-2 border-base-color justify-center sm:ml-5 items-center">
-                                        <img src="" alt="">
+                                    <div class="size-28 sm:size-40 overflow-hidden bg-gray-100 rounded-full flex border-2 border-base-color justify-center sm:ml-5 items-center">
+                                        <img src="/sarrel-visa-express/src/imgs/pexels-kooldark-14438788.jpg" alt="" class="w-full h-full object-cover">
                                     </div>
                                    </div>
                                    <div class=" bg-white py-4 sm:h-auto flex justify-center mb-2 sm:text-center items-center flex-col gap-1 sm:gap-5 rounded-bl-3xl overflow-hidden  rounded-tr-3xl shadow-gray-500 shadow-md ">
                                     <div class="w-3/4 pl-4 text-gray-900 ">
                                         <h1 class="text-gray-950 font-bold mb-2">
-                                            Rayim Buraka
+                                            — Chen Bo
                                         </h1>
                                         <h2 class="text-semibold text-xs sm:text-sm md:text-sm mb-5">
-                                            1 Our goal is to provide you with the ultimate customer experience. In a world where legal services are limited, we assign to each application a case manager who will answer all your questions in great detail.
+                                            "Sumit, I am 100% satisfied with your services and with your cooperation . Your service and dedication towards your customers is appreciable. This is bcos of your guidance I was able to got my visa.So, I would like to tell everyone that your services, quality, guidance is worth." 
                                         </h2>
                                     </div>
                                     <div class="flex gap-1">
@@ -561,17 +601,18 @@
 
 
 
-                 <section id="contactus" class="flex flex-col justify-center bg-gray-100 items-center">
-                    <div class="pt-20 pb-10 flex flex-col justify-center items-center w-3/4">
+                <section id="contactus" class="flex flex-col justify-center items-center  text-gray-900  bg-gray-100">
+                    <div class="py-11 flex flex-col w-4/5 justify-center items-center  ">
+                      
                         <div class="mb-5 w-4/5">
-                            <h1 class="text-gray-900 sm:text-2xl text-xl md:text-4xl font-semibold text-center mb-5">
-                                Let’s get in touch!
+                            <h1 class="text-gray-950 sm:text-2xl text-xl md:text-4xl font-semibold text-center mb-5">
+                                Get started
                             </h1>
-                            <h2 class=" md:text-3xl sm:text-sm text-center">
-                                Leave us your information here, and we will reach out to you faster than you can say “visa.”
+                            <h2 class=" md:text-3xl sm:text-sm text-center text-gray-900">
+                                Leave us your information here, you are one step away.
                             </h2>
                         </div>
-                        <div class=" sm:w-2/3">
+                        <div class=" sm:w-2/3 text-gray-900">
                             <div class="flex w-full flex-col sm:flex-row">
                                 <div class="sm:w-1/2">
                                     <div >
@@ -611,6 +652,16 @@
                                     </h1>
                                 </div>
                                 <div>
+                                    <input type="text" class="w-full h-11  rounded-bl-3xl rounded-tr-3xl shadow-inner border-2 border-gray-300 focus:outline-none pl-3 focus:border-base-color  focus:border-2">
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <h1>
+                                        State of origin:
+                                    </h1>
+                                </div>
+                                <div>
                                     <input type="text" class="w-full h-11 rounded-bl-3xl rounded-tr-3xl shadow-inner border-2 border-gray-300 focus:outline-none pl-3 focus:border-base-color  focus:border-2">
                                 </div>
                             </div>
@@ -627,16 +678,15 @@
                             <div class="flex my-7 gap-5 items-center">
                                 <input type="checkbox" name="" id="" class=" sm:size-6 rounded-md">
                                 <h1>
-                                    I have read and agree to the <a href="" class="text-base-color font-semibold underline">Terms of Use</a> and <a href="" class="text-base-color font-semibold underline">Privacy Policy</a>
+                                    I have read and agree to the <a href="terms.html" class="text-base-color font-semibold underline">Terms of Use</a> and <a href="privacy.html" class="text-base-color font-semibold underline">Privacy Policy</a>
                                 </h1>
                             </div>
                             <div class="flex justify-center items-center">
-                                <button class="sm:px-24 sm:py-3 px-11 py-1 bg-base-color font-semibold tracking-wider rounded-md text-white sm:text-2xl"> Submit</button>
+                               <a href="home.html" class="sm:px-24 sm:py-3 px-11 py-1 bg-base-color font-semibold tracking-wider rounded-md text-white sm:text-2xl">Submit</a> 
                             </div>
                         </div>
                     </div>
                  </section>
-        
                  
             
 
@@ -653,9 +703,9 @@
                                     <span class="text-base-color font-bold">Visa </span> Right</a> 
                                 </h1>
                                 <h2 class="text-white text-xs sm:text-xl  font-semibold mt-7"> 
-                                    Visa Right is not affiliated with any U.S goverment agency or department .Attorney advertising.This website is designed for general information only .
+                                    Visa Right is not affiliated with any U.S goverment agency or department Attorney advertising.This website is designed for general information only .
                                      <br> The information presented at the this site should not be constructed to be formal legal advice nor the information of a lawyer/client relationship .
-                                     <br> You may apply yourself directly at travel.state.gov
+                                     <br> You may apply yourself directly at support@visaright.online
                                 </h2>
                             </div>
                             <div class=" sm:ml-28 ml-4 ">
@@ -683,12 +733,7 @@
                          </footer>
                       </div>
                   </section>
-               
+            <script src="/sarrel-visa-express/src/script.js"></script>
            
-            
-               
-            
-            
-            <script src="/src/script.js"></script>
     </body>
 </html>
