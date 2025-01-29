@@ -32,7 +32,16 @@ module.exports = {
           '0%': { transform: 'scaleY(0)' },
           '80%': { transform: 'scaleY(1.2)' },
           '100%': { transform: 'scaleY(1)' },
+         ' scroll-left' :{
+           ' 0%' {
+              transform:' translateX(0)';
+            },
+           ' 100%' {
+              transform:' translateX(-100%)';
+            }
+          }
         },
+
 
         spin: {
           '0%': { transform: 'rotate(0deg)' },
@@ -49,8 +58,8 @@ module.exports = {
       animation: {
         'open-menu': 'open-menu 0.5s ease-in-out forwards',
         'open-page': 'open-menu 0.8s ease-in forwards',
-        spin: 'spin 1s linear infinite',
         'spin-slow': 'spin 5m linear infinite',
+        'scroll-wrapper' : 'scroll-left 15s linear infinite'
       },
     },
   },
