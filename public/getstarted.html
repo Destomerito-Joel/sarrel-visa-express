@@ -3,117 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apply Today</title>
-  <link href="./output.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <title>Application Form</title>
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link href="./output.css" rel="stylesheet">
+  <style>
+    .hidden { display: none; }
+    .spinner { border-top-color: transparent; animation: spin 1s linear infinite; }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
-  <section class="flex flex-col items-center text-gray-900 bg-gray-100 py-11">
-    <div class="w-4/5 flex flex-col items-center">
-      <div class="mb-5 text-center">
-        <h1 class="text-xl sm:text-2xl md:text-4xl font-semibold mb-5">Get started</h1>
-        <h2 class="text-sm sm:text-xl md:text-3xl">Leave us your information here, you are one step away.</h2>
+<body class="bg-gray-900 flex flex-col items-center min-h-screen ">
+  <h1 class="text-center pt-16 text-2xl"> <a href="index.html" class="text-white italic text-xl sm:text-4xl"> <span class="text-base-color font-bold">Visa </span> Right</a>
+  </h1>
+    <h1 class="text-white font-bold p-4">
+      Visa Application Form
+    </h1>
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md ">
+    <form id="multi-step-form">
+      <!-- Step 1: Personal Information -->
+      <div class="form-step" id="step-1">
+        <h2 class="text-2xl font-bold mb-4">Personal Information</h2>
+        <label class="block">Full Name:</label>
+        <input type="text" name="full_name" required class="w-full p-2 border rounded mb-3">
+        <label class="block">Date of Birth:</label>
+        <input type="date" name="dob" required class="w-full p-2 border rounded mb-3">
+        <label class="block">Gender:</label>
+        <input type="text" name="gender" required class="w-full p-2 border rounded mb-3">
+        <button type="button" class="next-step bg-blue-500 text-white px-4 py-2 rounded">Next</button>
       </div>
-      <form id="contact-form" class="sm:w-2/3 space-y-6">
-        <div class="flex flex-col sm:flex-row gap-4">
-            <div class="w-full">
-                <label>Your first name(s):</label>
-                <input type="text" name="first_name" required class="w-full h-11 rounded-bl-3xl rounded-tr-3xl border-2 border-gray-300 shadow-inner pl-3 focus:outline-none focus:border-base-color">
-            </div>
-            <div class="w-full">
-                <label>Your surname(s):</label>
-                <input type="text" name="surname" required class="w-full h-11 rounded-bl-3xl rounded-tr-3xl border-2 border-gray-300 shadow-inner pl-3 focus:outline-none focus:border-base-color">
-            </div>
-        </div>
-        <div>
-            <label>Your email address:</label>
-            <input type="email" name="email" required class="w-full h-11 rounded-bl-3xl rounded-tr-3xl border-2 border-gray-300 shadow-inner pl-3 focus:outline-none focus:border-base-color">
-        </div>
-        <div>
-            <label>Your telephone number (optional):</label>
-            <input type="text" name="phone" class="w-full h-11 rounded-bl-3xl rounded-tr-3xl border-2 border-gray-300 shadow-inner pl-3 focus:outline-none focus:border-base-color">
-        </div>
-        <div>
-            <label>State of origin:</label>
-            <input type="text" name="state" required class="w-full h-11 rounded-bl-3xl rounded-tr-3xl border-2 border-gray-300 shadow-inner pl-3 focus:outline-none focus:border-base-color">
-        </div>
-        <div>
-            <label>How can we help?</label>
-            <textarea name="message" required class="w-full h-44 rounded-bl-3xl rounded-tr-3xl border-2 border-gray-300 shadow-inner pl-3 focus:outline-none focus:border-base-color"></textarea>
-        </div>
-        <div class="flex items-center gap-4">
-            <input type="checkbox" id="terms" required class="rounded-md">
-            <p>
-                I have read and agree to the <a href="terms.html" class="text-base-color font-semibold underline">Terms of Use</a> and <a href="privacy.html" class="text-base-color font-semibold underline">Privacy Policy</a>
-            </p>
-        </div>
-        <div class="flex justify-center">
-            <button type="submit" id="submit-btn" class="px-11 py-3 sm:px-24 bg-base-color text-white font-semibold rounded-md sm:text-2xl flex items-center gap-2">
-                <span id="submit-text">Submit</span>
-                <span id="loader" class="hidden w-5 h-5 border-4 border-white border-t-transparent rounded-full animate-spin"></span>
-            </button>
-        </div>
-    </form>
-    </div>
-  </section>
+      
+      <!-- Step 2: Contact Details -->
+      <div class="form-step hidden" id="step-2">
+        <h2 class="text-2xl font-bold mb-4">Contact Details</h2>
+        <label class="block">Home Address:</label>
+        <input type="text" name="address" required class="w-full p-2 border rounded mb-3">
+        <label class="block">Email:</label>
+        <input type="email" name="email" required class="w-full p-2 border rounded mb-3">
+        <button type="button" class="prev-step bg-gray-500 text-white px-4 py-2 rounded">Previous</button>
+        <button type="button" class="next-step bg-blue-500 text-white px-4 py-2 rounded">Next</button>
+      </div>
 
-  <!-- Success Modal -->
-  <div id="success-modal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
-    <div class="bg-white rounded-lg shadow-lg p-6 w-3/4 sm:w-1/2 md:w-1/3">
-      <h2 class="text-2xl font-semibold text-center mb-4">Success!</h2>
-      <p class="text-center text-gray-700">Your form has been submitted successfully.</p>
-      <div class="flex justify-center mt-4">
-        <button id="close-modal" class="px-6 py-2 bg-green-500 text-white rounded-lg">OK</button>
+      <!-- Step 3: Travel Information -->
+      <div class="form-step hidden" id="step-3">
+        <h2 class="text-2xl font-bold mb-4">Travel Information</h2>
+        <label class="block">Type of Visa:</label>
+        <input type="text" name="visa_type" required class="w-full p-2 border rounded mb-3">
+        <label class="block">Purpose of Travel:</label>
+        <input type="text" name="travel_purpose" required class="w-full p-2 border rounded mb-3">
+        <button type="button" class="prev-step bg-gray-500 text-white px-4 py-2 rounded">Previous</button>
+        <button type="button" class="next-step bg-blue-500 text-white px-4 py-2 rounded">Next</button>
       </div>
-    </div>
+
+      <!-- Step 4: Employment/Education Details -->
+      <div class="form-step hidden" id="step-4">
+        <h2 class="text-2xl font-bold mb-4">Employment/Education Details</h2>
+        <label class="block">Current Occupation:</label>
+        <input type="text" name="occupation" required class="w-full p-2 border rounded mb-3">
+        <label class="block">Employer/Institution Name:</label>
+        <input type="text" name="employer" required class="w-full p-2 border rounded mb-3">
+        <button type="button" class="prev-step bg-gray-500 text-white px-4 py-2 rounded">Previous</button>
+        <button type="button" class="next-step bg-blue-500 text-white px-4 py-2 rounded">Next</button>
+      </div>
+
+      <!-- Step 5: Sponsorship -->
+      <div class="form-step hidden" id="step-5">
+        <h2 class="text-2xl font-bold mb-4">Sponsorship</h2>
+        <label class="block">Who is funding the trip?</label>
+        <input type="text" name="funding_source" required class="w-full p-2 border rounded mb-3">
+        <button type="button" class="prev-step bg-gray-500 text-white px-4 py-2 rounded">Previous</button>
+        <button type="button" class="next-step bg-blue-500 text-white px-4 py-2 rounded">Next</button>
+      </div>
+
+      <!-- Step 6: Submit -->
+      <div class="form-step hidden" id="step-6">
+        <h2 class="text-2xl font-bold mb-4">Final Step</h2>
+        <label class="block">Spouse’s Name (if married):</label>
+        <input type="text" name="spouse_name" class="w-full p-2 border rounded mb-3">
+        <label class="block">Medical Conditions:</label>
+        <input type="text" name="medical_conditions" class="w-full p-2 border rounded mb-3">
+        <div class="flex gap-1">
+          <button type="button" class="prev-step bg-gray-500 text-white px-4 py-2 rounded">Previous</button>
+          <button id="submit-button" type="submit" class="bg-base-color text-white px-4 py-2 rounded flex items-center justify-center">
+            <span id="spinner" class="spinner hidden w-5 h-5 border-2 border-t-2 border-white rounded-full mr-2"></span> Submit
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
 
   <script>
-    (function() {
-        emailjs.init("NcXUZDlPMNgxtFVw6"); // Replace with your actual Public Key
-    })();
-  
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent form from refreshing the page
-  
-        const submitBtn = document.getElementById("submit-btn");
-        const submitText = document.getElementById("submit-text");
-        const loader = document.getElementById("loader");
+    document.addEventListener("DOMContentLoaded", function() {
+        emailjs.init("NcXUZDlPMNgxtFVw6"); 
 
-        // Disable button and show loader
-        submitBtn.disabled = true;
-        submitText.textContent = "Submitting...";
-        loader.classList.remove("hidden");
+        const steps = document.querySelectorAll(".form-step");
+        let currentStep = 0;
 
-        const serviceID = "service_vdq4phu"; // Replace with your EmailJS Service ID
-        const templateID = "template_wzv640f"; // Replace with your EmailJS Template ID
-  
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
-                // Hide loader and reset button text
-                loader.classList.add("hidden");
-                submitText.textContent = "Submit";
-                submitBtn.disabled = false;
+        function showStep(stepIndex) {
+            steps.forEach((step, index) => step.classList.toggle("hidden", index !== stepIndex));
+        }
 
-                // Show success modal
-                document.getElementById("success-modal").classList.remove("hidden");
-                document.getElementById("contact-form").reset(); // Reset form after submission
-            })
-            .catch(error => {
-                // Hide loader and reset button text in case of error
-                loader.classList.add("hidden");
-                submitText.textContent = "Submit";
-                submitBtn.disabled = false;
-
-                alert("Failed to send message: " + error.text);
+        document.querySelectorAll(".next-step").forEach(button => {
+            button.addEventListener("click", () => {
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
             });
+        });
+
+        document.querySelectorAll(".prev-step").forEach(button => {
+            button.addEventListener("click", () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    showStep(currentStep);
+                }
+            });
+        });
+
+        document.getElementById("multi-step-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Show the loader
+    document.getElementById("spinner").classList.remove("hidden");
+    const submitButton = document.getElementById("submit-button");
+    submitButton.disabled = true;
+
+    const formData = new FormData(this);
+    const formObject = {};
+    formData.forEach((value, key) => {
+        formObject[key] = value || "N/A";
     });
 
-    document.getElementById("close-modal").addEventListener("click", function() {
-        document.getElementById("success-modal").classList.add("hidden");
+    const applicantEmail = formObject["email"];  // Ensure this matches the template variable
+
+    emailjs.send("service_vdq4phu", "template_wzv640f", {
+        ...formObject,  
+        to_email: applicantEmail  // Send to applicant's email for auto-reply
+    }, "NcXUZDlPMNgxtFVw6")
+    .then(response => {
+        alert("Application submitted successfully!");
+        console.log("Email sent:", response);
+        document.getElementById("multi-step-form").reset();
+        submitButton.disabled = false;
+        document.getElementById("spinner").classList.add("hidden");
+    })
+    .catch(error => {
+        alert("Error sending email. Please try again.");
+        console.log("Email error:", error);
+        submitButton.disabled = false;
+        document.getElementById("spinner").classList.add("hidden");
+    });
+});
     });
   </script>
-
 </body>
 </html>

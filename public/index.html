@@ -20,6 +20,18 @@
             35% { transform: scale(1.3); opacity: 0.3; }
         }
     </style>
+    <!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = 'c7b3a656df7b057a99bc2471c7f03bc55cf979a1';
+    window.smartsupp||(function(d) {
+      var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+      c.type='text/javascript';c.charset='utf-8';c.async=true;
+      c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+    </script>
+    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
 </head>
     <!-- npx tailwindcss -i ./src/input.css -o ./public/output.css --watch -->
     
@@ -40,38 +52,28 @@
     </div>
             <div  > <!-- container-->
                 <div class="w-full h-full ">
-                    <div x-data="{ open: false}">
-                    <header class="fixed w-screen flex items-center z-40 justify-center">
-                        <nav class="flex mt-3  justify-between items-center  bg-gray-900 h-20 w-11/12 px-6 shadow-md shadow-gray-800 rounded-bl-3xl  rounded-tr-3xl">
-                            <div style="background-image: url();" class="relative ">
-                                <a href="index.html" class="text-white italic text-xl sm:text-4xl"> <span class="text-base-color font-bold">Visa </span> Right</a>
-                            </div>
-                                <ul class="hidden lg:flex justify-between items-center relative  gap-10 text-xs md:text-xl text-white font-semibold">
-                                    <li >
-                                        <a href="#service" class=" font-semibold transition transform hover:text-base-color hover:font-roboto">Service</a>
-                                    </li>
-                                    <li>
-                                        <a href="#aboutus " class="transition transform hover:text-base-color">About us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#testimonials1" class="transition transform hover:text-base-color">Testimonials</a>
-                                    </li>
-                                    <li>
-                                        <a href="#contactus" class="transition transform hover:text-base-color">contact us</a>
-                                    </li>
+                    <div x-data="{ open: false, dropdownOpen: false }">
+                        <header class="fixed w-screen flex items-center z-40 justify-center">
+                            <nav class="flex mt-3 justify-between items-center bg-gray-900 h-20 w-11/12 px-6 shadow-sm shadow-gray-800 rounded-bl-3xl rounded-tr-3xl">
+                                <div style="background-image: url();" class="relative ">
+                                    <a href="index.html" class="text-white italic text-xl sm:text-4xl">
+                                        <span class="text-base-color font-bold">Visa </span> Right
+                                    </a>
+                                </div>
+                                <ul class="hidden lg:flex justify-between items-center relative gap-10 text-xs md:text-xl text-white font-semibold">
+                                    <li><a href="#service" class="font-semibold transition transform hover:text-base-color hover:font-roboto" @click="open = false">Service</a></li>
+                                    <li><a href="#aboutus" class="transition transform hover:text-base-color" @click="open = false">About us</a></li>
+                                    <li><a href="#testimonials1" class="transition transform hover:text-base-color" @click="open = false">Testimonials</a></li>
+                                    <li><a href="#contactus" class="transition transform hover:text-base-color" @click="open = false">Contact us</a></li>
                                 </ul>
-
-                            <button @click="open = !open"  class="size-8 px-1 shadow-inner relative lg:hidden shadow-gray-800 rounded-sm flex flex-col items-center gap-1 justify-center" id="hamburger">
-                                <div class="w-4/5  bg-base-color h-1 rounded-full shadow-md"></div>
-                                <div class="w-2/4 bg-base-color h-1 rounded-full"></div>
-                                <div class="w-4/5  bg-base-color h-1 rounded-full"></div>
-                            </button>
-
-                        </nav>
-
-                        
-                    </header>
-            
+                    
+                                <button @click="open = !open" class="size-8 px-1 shadow-inner relative lg:hidden shadow-gray-800 rounded-sm flex flex-col items-center gap-1 justify-center" id="hamburger">
+                                    <div class="w-4/5 bg-base-color h-1 rounded-full shadow-md"></div>
+                                    <div class="w-2/4 bg-base-color h-1 rounded-full"></div>
+                                    <div class="w-4/5 bg-base-color h-1 rounded-full"></div>
+                                </button>
+                            </nav>
+                        </header>
                     
                         <!-- Navdrawer Overlay -->
                         <div 
@@ -85,72 +87,66 @@
                             class="fixed inset-0 bg-gray-900 bg-opacity-75 z-10"
                             @click="open = false">
                         </div>
-                
+                    
                         <!-- Navdrawer -->
-                        <!-- Navdrawer -->
-<div 
-x-show="open" 
-x-transition:enter="transition ease-out duration-300 transform" 
-x-transition:enter-start="-translate-x-full" 
-x-transition:enter-end="translate-x-0" 
-x-transition:leave="transition ease-in duration-300 transform" 
-x-transition:leave-start="translate-x-0" 
-x-transition:leave-end="-translate-x-full" 
-class="fixed top-0 left-0 h-full w-80 bg-gray-800 text-white shadow-xl z-40"
-@click.stop>
-<div class="p-5">
-    <h2 class="text-2xl font-bold mb-6"><span class="text-base-color">E</span>xplore</h2>
-
-    <!-- Dropdown 1 -->
-    <div x-data="{ dropdownOpen: false }" class="border-b mb-4">
-        <button @click="dropdownOpen = !dropdownOpen" class="flex items-center justify-between w-full text-left p-3 hover:bg-gray-800">
-            <span class="font-bold">Menu</span>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-            </svg>
-        </button>
-        <div x-show="dropdownOpen" class="mt-2" x-transition>
-            <ul class="space-y-2 text-gray-300">
-                <li class="p-2 hover:bg-gray-700"><a href="#aboutus" @click="open = false">About us</a></li>
-                <li class="p-2 hover:bg-gray-700"><a href="team.html" @click="open = false">Meet our Team</a></li>
-                <li class="p-2 hover:bg-gray-700"><a href="#service" @click="open = false">Our services</a></li>
-                <li class="p-2 hover:bg-gray-700"><a href="#testimonials" @click="open = false">Testimonials</a></li>
-                <li class="p-2 hover:bg-gray-700"><a href="#contactus" @click="open = false">Contact us</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Quick Links -->
-    <div x-data="{ dropdownOpen: false }" class="border-b mb-4">
-        <button @click="dropdownOpen = !dropdownOpen" class="flex items-center justify-between w-full text-left p-3 hover:bg-gray-800">
-            <span class="font-bold">Quick links</span>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-            </svg>
-        </button>
-        <div x-show="dropdownOpen" class="mt-2" x-transition>
-            <ul class="space-y-2 text-gray-300">
-                <li class="p-2 hover:bg-gray-700"><a href="privacy.html" @click="open = false">Privacy Policy</a></li>
-                <li class="p-2 hover:bg-gray-700"><a href="legal.html" @click="open = false">Legal Disclaimer</a></li>
-            </ul>
-        </div>
-    </div>
-    
-                
-    
-
-
-
-    <li class="bg-base-color hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8 w-full"><a href="getstarted.html">Get Started</a> </li>
-    <!-- <div class="flex justify-center items-center">
-        <div id="google_translate_element" class="flex"></div>
-      </div> -->
-</div>
-</div>
-
-                
-                        <!-- Open Button -->
+                        <div 
+                            x-show="open" 
+                            x-transition:enter="transition ease-out duration-300 transform" 
+                            x-transition:enter-start="-translate-x-full" 
+                            x-transition:enter-end="translate-x-0" 
+                            x-transition:leave="transition ease-in duration-300 transform" 
+                            x-transition:leave-start="translate-x-0" 
+                            x-transition:leave-end="-translate-x-full" 
+                            class="fixed top-0 left-0 h-full w-80 bg-gray-800 text-white shadow-xl z-40"
+                            @click.stop>
+                            <div class="p-5">
+                                <h2 class="text-2xl font-bold mb-6"><span class="text-base-color">E</span>xplore</h2>
+                    
+                                <!-- Dropdown 1 -->
+                                <div class="border-b mb-4">
+                                    <button @click="dropdownOpen = !dropdownOpen" class="flex items-center justify-between w-full text-left p-3 hover:bg-gray-800">
+                                        <span class="font-bold">Menu</span>
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                    <div x-show="dropdownOpen" class="mt-2" x-transition>
+                                        <ul class="space-y-2 text-gray-300">
+                                            <li class="p-2 hover:bg-gray-700"><a href="#aboutus" @click="open = false; dropdownOpen = false">About us</a></li>
+                                            <li class="p-2 hover:bg-gray-700"><a href="team.html" @click="open = false; dropdownOpen = false">Meet our Team</a></li>
+                                            <li class="p-2 hover:bg-gray-700"><a href="#service" @click="open = false; dropdownOpen = false">Our services</a></li>
+                                            <li class="p-2 hover:bg-gray-700"><a href="#contactus" @click="open = false; dropdownOpen = false">Contact us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    
+                                <!-- Quick Links -->
+                                <div class="border-b mb-4">
+                                    <button @click="dropdownOpen = !dropdownOpen" class="flex items-center justify-between w-full text-left p-3 hover:bg-gray-800">
+                                        <span class="font-bold">Quick links</span>
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                    <div x-show="dropdownOpen" class="mt-2" x-transition>
+                                        <ul class="space-y-2 text-gray-300">
+                                            <li class="p-2 hover:bg-gray-700"><a href="privacy.html" @click="open = false; dropdownOpen = false">Privacy Policy</a></li>
+                                            <li class="p-2 hover:bg-gray-700"><a href="legal.html" @click="open = false; dropdownOpen = false">Legal Disclaimer</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    
+                                <li class="bg-base-color hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8 w-full">
+                                    <a href="getstarted.html" @click="open = false; dropdownOpen = false">Get Started</a>
+                                </li>
+                            </div>
                         </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
               
 
 
@@ -431,13 +427,205 @@ class="fixed top-0 left-0 h-full w-80 bg-gray-800 text-white shadow-xl z-40"
         
         
                  <section id="service" class="pt-28">
+                    <div class="max-w-3xl mx-auto">
+                        <div class="bg-white p-6 rounded-lg mb-6">
+                            <h2 class="md:text-2xl font-bold text-xl md:font-bold mb-2">U.S. Visa Legal Services for Temporary Stay</h2>
+                            <p class="text-gray-700 mb-4 text-sm md:text-xl">
+                                Navigating the U.S. visa application process on your own can be daunting, time-consuming, and often frustrating. 
+                                That’s why we’ve redefined how visa services should work, combining expert legal guidance with unmatched convenience—all at a price no other law firm can match.
+                            </p>
+                            <div class="flex justify-between ">
+                                <button class="bg-base-color text-white px-4 py-2 rounded"><a href="getstarted.html">GET STARTED</a></button>
+                            <button onclick="togglePanel('panel1')" class="mt-2 text-gray-900 border-2 p-2 rounded-lg border-base-color block">Open details ▼</button>
+                            </div>
+                            <div id="panel1" class="hidden mt-2"> 
+                                <!-- Add your expandable content here -->
+                                <div class="max-w-3xl mx-auto bg-white ">
+                                    <h1 class="text-2xl font-bold text-gray-800 mb-4">What we do for you</h1>
+                                    <p class="text-gray-600 mb-6">Our service is designed to make the process as seamless as possible, so you can focus on your journey, not the paperwork. Here's how we help:</p>
+                                    
+                                    <!-- Application Review Section -->
+                                    <div class="bg-blue-100 p-4 rounded-lg mb-4">
+                                        <div>
+                                            <img src="https://www.svgrepo.com/show/474443/advanced-study-application.svg" alt="" class="size-20">
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <h2 class="text-lg font-semibold text-gray-800">Application Review and Assessment</h2>
+                                        </div>
+                                        <p class="text-gray-600 mt-2">Immediately after purchase, we begin with a careful review of your visa application; we provide a personalized assessment where we identify any missing or incorrect information and address any inconsistencies.</p>
+                                    </div>
+                            
+                                    <!-- Submission Done Section -->
+                                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                        <div>
+                                            <img src="https://www.svgrepo.com/show/366084/directory-accept.svg" alt="" class="size-20">
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <h2 class="text-lg font-semibold text-gray-800">Submission Done for You</h2>
+                                        </div>
+                                        <p class="text-gray-600 mt-2">Once everything is in order, we submit your application on your behalf, ensuring it’s error-free and fully compliant with present U.S. government requirements.</p>
+                                    </div>
+                                    <!-- Submission Done Section -->
+                                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                        <div>
+                                            <img src="https://www.svgrepo.com/show/530397/date.svg" alt="" class="size-20">
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <h2 class="text-lg font-semibold text-gray-800">Interview Scheduling Assistance</h2>
+                                        </div>
+                                        <p class="text-gray-600 mt-2">We guide you step by step to pay for your MRV fee of $185 and then, optionally, book your interview at the U.S. consulate.</p>
+                                    </div>
+                                    <!-- Submission Done Section -->
+                                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                        <div>
+                                            <img src="https://www.svgrepo.com/show/530377/chat-chat.svg" alt="" class="size-20">
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <h2 class="text-lg font-semibold text-gray-800">Bespoke Interview Preparation</h2>
+                                        </div>
+                                        <p class="text-gray-600 mt-2">Our team provides one-on-one interview coaching tailored to your application and personal context. We make sure you walk into your interview fully confident and prepared.</p>
+                                    </div>
+                                    <!-- Submission Done Section -->
+                                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                        <div>
+                                            <img src="https://www.svgrepo.com/show/530391/reminder-alert.svg" alt="" class="size-20">
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <h2 class="text-lg font-semibold text-gray-800">Proactive Reminders and Follow-Ups</h2>
+                                        </div>
+                                        <p class="text-gray-600 mt-2">From reminders about your upcoming interview to post-interview guidance, we’re with you every step of the way to ensure you don’t miss a thing.</p>
+                                    </div>
+                                    <!-- Submission Done Section -->
+                                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                        <div>
+                                            <img src="https://www.svgrepo.com/show/530404/document.svg" alt="" class="size-20">
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <h2 class="text-lg font-semibold text-gray-800">Document Collection Assistance</h2>
+                                        </div>
+                                        <p class="text-gray-600 mt-2">After your interview, we help you retrieve your documents without any hassle.</p>
+                                    </div>
+                
+                
+                                    <div class="max-w-2xl  bg-white  p-6 rounded-lg">
+                                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Why Choose Us?</h2>
+                                        
+                                        <div class="space-y-4 text-sm">
+                                            <div class="flex items-start space-x-3">
+                                                <img src="https://www.svgrepo.com/show/246336/tick-success.svg" alt="" class="size-10">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Legal Expertise, Simplified Process</h3>
+                                                    <p class="text-gray-700">Unlike government platforms, our smart system makes the application process easy to understand while ensuring compliance with all legal requirements.</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="flex items-start space-x-3">
+                                                <img src="https://www.svgrepo.com/show/246336/tick-success.svg" alt="" class="size-10">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Personalized Support</h3>
+                                                    <p class="text-gray-700">No two cases are alike, and neither is our guidance. Your interview preparation and application process are custom-tailored to your unique situation.</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="flex items-start space-x-3">
+                                                <img src="https://www.svgrepo.com/show/246336/tick-success.svg" alt="" class="size-10">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Transparent Pricing, No Hidden Costs</h3>
+                                                    <p class="text-gray-700">At just $195, our pricing is unmatched for the level of service provided. Our customers love the clarity and value we offer.</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="flex items-start space-x-3">
+                                                <img src="https://www.svgrepo.com/show/246336/tick-success.svg" alt="" class="size-10">
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-900">Convenience You Can Rely On</h3>
+                                                    <p class="text-gray-700">Applying on your own can take hours or days of frustration. With us, you save time, avoid errors, and gain peace of mind knowing experienced professionals have your back.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-6 border-t pt-4 text-sm text-gray-600">
+                                            <strong>Important Note:</strong> We are not affiliated with the U.S. government or any official agency. We provide expert legal assistance to make the visa process faster, easier, and hassle-free for you. After applying, your application and documents will be sent directly to the embassy that will be interviewing you. Other small shipping fees for shipping your interview materials may apply. The average non-refundable cost of the US VISA application fee is around $400 USD.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button onclick="togglePanel('panel1')" class="mt-2 text-gray-900 font-bold border-2 p-2 rounded-lg border-base-color block">Close details ▼</button>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="bg-white p-6  rounded-lg">
+                            <h2 class="md:text-2xl font-bold text-xl md:font-bold mb-2">Permanent Residency & Immigration Solutions</h2>
+                            <p class="text-gray-700 mb-4 text-sm md:text-xl">
+                                Whether you’re pursuing a green card, resolving a visa denial, or navigating other complex immigration challenges, we’re here to provide expert legal guidance every step of the way.
+                                Our services combine the reliability of a classic law firm with the convenience of modern, remote accessibility.
+                            </p>
+                            <div class="flex justify-between">
+                                <button class="bg-base-color text-white px-4 py-2 rounded"><a href="getstarted.html">GET STARTED</a></button>
+                            <button onclick="togglePanel('panel2')" class="mt-2 text-gray-900 border-2 p-2 rounded-lg border-base-color block">Open details ▼</button>
+                            </div>
+                            <div id="panel2" class="hidden mt-2 bg-gray-50 p-4 rounded"> 
+                                <!-- Add your expandable content here -->
+                                <h2 class="text-2xl font-bold text-gray-800 mb-4">how it works</h2>
+                                <div>
+                                    <div class="bg-blue-100 p-4 rounded-lg mb-4">
+                                        <div>
+                                            <img src="https://www.svgrepo.com/show/509130/headphones-microphone.svg" alt="" class="size-20">
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <h2 class="text-lg font-semibold text-gray-800">Start with a Paid Consultation</h2>
+                                        </div>
+                                        <p class="text-gray-600 mt-2">Begin your journey with a one-on-one session with one of our experienced attorneys for just $195. During this consultation, we evaluate your case, determine your eligibility, and explore your best options. If you choose to work with us, this fee will be fully credited toward your legal retainer.</p>
+                                    </div>
+                                    <div class="bg-blue-100 p-4 rounded-lg mb-4">
+                                        <div>
+                                            <img src="https://www.svgrepo.com/show/163315/handle-with-care.svg" alt="" class="size-20">
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <h2 class="text-lg font-semibold text-gray-800">We Handle Everything</h2>
+                                        </div>
+                                        <p class="text-gray-600 mt-2">From collecting, reviewing, and organizing your documents to preparing and submitting your application to the government, we take care of it all. You’ll receive personalized updates throughout the process, and if additional requests arise from the government, we’ll respond on your behalf.</p>
+                                    </div>
+                                    <div class="space-y-4 text-sm">
+                                        <div class="flex items-start space-x-3">
+                                            <img src="https://www.svgrepo.com/show/246336/tick-success.svg" alt="" class="size-10">
+                                            <div>
+                                                <h3 class="font-semibold text-gray-900">Expertise You Can Trust</h3>
+                                                <p class="text-gray-700">Our attorneys are U.S.-based and barred in Utah and Arizona, with deep experience in federal immigration law.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <img src="https://www.svgrepo.com/show/246336/tick-success.svg" alt="" class="size-10">
+                                            <div>
+                                                <h3 class="font-semibold text-gray-900">Convenience Without Compromise</h3>
+                                                <p class="text-gray-700">Remote service means no office visits, no waiting rooms—just straightforward legal assistance wherever you are.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <img src="https://www.svgrepo.com/show/246336/tick-success.svg" alt="" class="size-10">
+                                            <div>
+                                                <h3 class="font-semibold text-gray-900">No Additional Fees</h3>
+                                                <p class="text-gray-700">Once your retainer is set, it covers everything, no matter how complex or lengthy your case becomes.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <img src="https://www.svgrepo.com/show/246336/tick-success.svg" alt="" class="size-10">
+                                            <div>
+                                                <h3 class="font-semibold text-gray-900">Broad Legal Support</h3>
+                                                <p class="text-gray-700">From permanent residency applications to visa denials, criminal record evaluations, or other immigration needs, we have you covered.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button onclick="togglePanel('panel2')" class="mt-2 text-gray-900 border-2 p-2 rounded-lg border-gray-900 block">Close details ▼</button>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="w-full flexflex-col justify-center bg-white px-8">
                         <div class="flex flex-col justify-center items-center md:mb-10">
                             <section class="bg-white ">
                                 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-                                    <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-                                        <h1 class="text-center  text-xl sm:2xl md:text-4xl font-bold mb-8">Services</h1>
-                                    </div>
                                     <div class="mb-12 space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-16 lg:space-y-0">
                                         <!-- Esta -->
                                         <div>
@@ -958,17 +1146,12 @@ class="fixed top-0 left-0 h-full w-80 bg-gray-800 text-white shadow-xl z-40"
               </script> -->
             <!-- <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
            <!-- Smartsupp Live Chat script -->
-   <script type="text/javascript">
-    var _smartsupp = _smartsupp || {};
-    _smartsupp.key = 'c7b3a656df7b057a99bc2471c7f03bc55cf979a1';
-    window.smartsupp||(function(d) {
-      var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-      c.type='text/javascript';c.charset='utf-8';c.async=true;
-      c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-    })(document);
-    </script>
-    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
-
+  <!-- Smartsupp Live Chat script -->
+  <script>
+    function togglePanel(panelId) {
+        const panel = document.getElementById(panelId);
+        panel.classList.toggle('hidden');
+    }
+</script>
     </body>
 </html>
