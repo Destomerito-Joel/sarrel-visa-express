@@ -9,18 +9,36 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Remove loader after page fully loads
-        window.addEventListener("load", function () {
-            document.getElementById("preloader").classList.add("hidden");
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.getElementById("preloader").classList.add("hidden");
+    }, 500); // Adjust delay as needed
+});
+
     </script>
+    <style>
+        @keyframes scaleEffect {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .animate-scale {
+            animation: scaleEffect 2s infinite 20s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .welcome-popup {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
     <style>
         @keyframes cubeBounce {
             0%, 70%, 100% { transform: scale(1); opacity: 1; }
             35% { transform: scale(1.3); opacity: 0.3; }
         }
     </style>
-    <!-- Smartsupp Live Chat script -->
+<!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
     var _smartsupp = _smartsupp || {};
     _smartsupp.key = 'c7b3a656df7b057a99bc2471c7f03bc55cf979a1';
@@ -31,7 +49,8 @@
       c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
     })(document);
     </script>
-    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+    <noscript> Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
+
 </head>
     <!-- npx tailwindcss -i ./src/input.css -o ./public/output.css --watch -->
     
@@ -427,6 +446,7 @@
         
         
                  <section id="service" class="pt-28">
+                    <h1 class="text-gray-800 font-bold text-2xl text-center pb-5">Services</h1>
                     <div class="max-w-3xl mx-auto">
                         <div class="bg-white p-6 rounded-lg mb-6">
                             <h2 class="md:text-2xl font-bold text-xl md:font-bold mb-2">U.S. Visa Legal Services for Temporary Stay</h2>
@@ -696,6 +716,7 @@
         
                  <section id="aboutus">
                     <div class=" flex flex-col justify-center items-center pt-28 bg-slate-100">
+                        <h1 class="text-center font-bold text-gray-900 text-2xl">About us</h1>
                         <div class="w-3/4 mt-14 flex flex-col justify-center items-center ">
                             <h1 class="md:text-4xl text-gray-950 font-bold mb-14 sm:text-xl text-center">
                                 Streamlined online travel permits. <br> Managed by a U.S. law firm.
@@ -782,6 +803,21 @@
 
                
                  <section id="testimonials1" class="flex items-center  pt-28 flex-col bg-gray-200 justify-center">
+                    <h1 class="text-2xl text-center font-bold pb-5">Testimonials</h1>
+                
+                    <div class="relative max-w-2xl bg-gray-900 py-5  backdrop-blur-lg border border-white/20 text-white p-6 rounded-lg shadow-lg">
+                        <div class="relative z-10">
+                            <p class="text-lg font-semibold">
+                                "On the domestic front, my administration is committed to implement all signed peace agreements in step with constitutional and legal reforms.
+                            </p>
+                            <p class="mt-4">
+                                I most comment Visa Right immigration services for their partnership with the Government of The Philippines.
+                            </p>
+                            <p class="mt-4 font-bold text-sm text-gray-300">PRESIDENT RODRIGO ROA DUTERTE</p>
+                            <p class="text-sm text-gray-400">Inaugural Speech | June 30, 2016, Malacañang Palace</p>
+                        </div>
+                        <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iMnCOr_ppAfc/v1/-1x-1.webp" alt="Speaker" class="absolute right-2 bottom-2 w-32 h-32 object-cover rounded-full border-2 border-base-color shadow-sm">
+                    </div>
                     <div class="w-full overflow-hidden h-auto">
                         <div id="slider" class="flex transition-transform duration-1000">
                           <div class="w-full flex-shrink-0 h-auto  flex items-center  justify-center ">
@@ -982,9 +1018,10 @@
                 <img src="https://www.svgrepo.com/show/425155/phone-call-essential.svg" alt="" class="w-6 h-6 mr-2">
                 MON-FRI, 09:00 AM - 05:00 PM
             </p>
-            <p class="flex items-center mb-4 text-gray-700">
+            <p class="flex items-center mb-4 text-wrap text-gray-700">
                 <img src="https://www.svgrepo.com/show/468758/email.svg" alt="" class="w-6 h-6 mr-2">
-                visarightimmigrationservices@gmail.com
+                visarightimmigration
+                services@gmail.com
             </p>
         </div>
 
@@ -1129,9 +1166,54 @@
         <p class="text-xs mt-2 underline cursor-pointer">Privacy policy</p>
     </div>
 
+    
 
+    <!-- live chat pop up -->
 
+    <!-- <div class="fixed bottom-0 right-0 p-4 z-50 rounded-lg shadow-md ">
+     <div class="w-24 bg-white">
+        <p class="p-2 text-gray-600 text-sm hover:text-gray-800">
+            welcome to Visa Right how can we help?
+           </p> 
+     </div>
+       <div>
+        <img src="https://www.svgrepo.com/show/303150/whatsapp-symbol-logo.svg" alt="WhatsApp" class="w-8 h-8 rounded-full">
+       </div>
+    </div> -->
 
+     <!-- Live Chat Icon with Notification Badge -->
+     <!-- <div class="fixed bottom-5 right-5">
+        <div class="relative">
+          
+            <div id="welcomeMessage" class="welcome-popup bg-white text-gray-900 p-3 rounded-lg shadow-lg absolute bottom-16 right-0 w-64 hidden">
+                <p class="text-sm pb-4">Hi, welcome to Visaright! We are here to help you.</p>
+                <div class="flex gap-2">
+                    <a href="http://wa.me/+15792582947" class="bg-base-color hover:bg-orange-500 text-white px-4 py-2 rounded-md "> lets chat </a>
+                <button onclick="hidePopup()" class="border-base-color border-2 px-4 py-2 rounded-md "> Cancel </button>
+                </div>
+            </div>
+
+            
+            <div  class="bg-blue-500 p-3 rounded-full shadow-md cursor-pointer animate-scale ml-3" >
+                <a href=""><img src="https://www.svgrepo.com/show/303150/whatsapp-symbol-logo.svg" alt="WhatsApp" class="w-8 h-8 rounded-full "></a>
+            </div>
+
+           
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">1</span>
+        </div>
+    </div> -->
+
+    <script>
+        // Show pop-up message on page load
+        window.onload = function() {
+            document.getElementById("welcomeMessage").classList.remove("hidden");
+        };
+
+        // Hide pop-up when clicking the chat icon
+        function hidePopup() {
+            document.getElementById("welcomeMessage").classList.add("hidden");
+        }
+    </script>
 
 
             <script src="script.js"></script>
@@ -1153,5 +1235,6 @@
         panel.classList.toggle('hidden');
     }
 </script>
+    
     </body>
 </html>
